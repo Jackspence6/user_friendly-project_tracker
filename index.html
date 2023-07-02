@@ -46,8 +46,96 @@
         <li class="list-group-item">Due Date</li>
         <li class="list-group-item">Hourly Rate</li>
       </ul>
-      <div class="card-header">
-        <a href="#" class="btn btn-primary">Add Project</a>
+      <div class="card-footer">
+        <!-- Button to open the modal -->
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#myModal"
+        >
+          Add Project
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal Dialog for user data -->
+    <div class="modal" id="myModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add A New Project</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Project Name Field -->
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Project Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="Mobile App Refactor"
+              />
+            </div>
+            <!-- Type of Project Field -->
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Type of Project</label
+              >
+              <div class="input-group mb-3">
+                <select class="form-select" id="inputGroupSelect01">
+                  <option selected>Please Select One...</option>
+                  <option value="1">Web Application (Front End)</option>
+                  <option value="2">Web Application (Back End)</option>
+                  <option value="3">Web Application (Full Stack)</option>
+                  <option value="4">Mobile Application</option>
+                </select>
+              </div>
+            </div>
+            <!-- Project Hourly Wage Field -->
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Hourly Wage</label
+              >
+              <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Dollar amount (with dot and two decimal places)"
+                />
+              </div>
+            </div>
+            <!-- Project Due Date Field -->
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Due Date</label
+              >
+              <input type="text" id="datepicker" />
+            </div>
+          </div>
+          <!-- Modal Footer -->
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">
+              Submit Project Details
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 

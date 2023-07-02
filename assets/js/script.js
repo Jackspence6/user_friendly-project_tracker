@@ -2,6 +2,7 @@
 /* External dependencies */
 /******************************************/
 var dateDisplayEl = $("#date-display");
+var datePickerEl = $("#datepicker");
 /******************************************/
 /* Global variables and constants */
 /******************************************/
@@ -14,6 +15,11 @@ function displayDate() {
   var now = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
   dateDisplayEl.text(now);
 }
+
+// Datepicker with a minimum date setting in place
+$(function () {
+  $("#datepicker").datepicker({ minDate: -20 });
+});
 
 /******************************************/
 /* Event listeners */
