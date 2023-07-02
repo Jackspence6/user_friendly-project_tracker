@@ -17,23 +17,34 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@200;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>Project Tracker</title>
   </head>
 
   <body>
     <!-- Current Time & Date Display -->
-    <header class="container-fluid">
+    <header class="container-fluid p-3 mb-2 bg-black bg-gradient text-white">
       <div class="container text-center">
         <h1>Project Tracker</h1>
-        <h1>Current Date & Time:</h1>
+        <h2>Current Date & Time:</h2>
         <p id="date-display"></p>
       </div>
     </header>
 
     <!-- Card with app instructions and button  -->
     <div class="card" style="width: 18rem">
-      <div class="card-header">Instructions</div>
+      <div class="card-header bg-dark bg-gradient text-white">Instructions</div>
       <div class="card-body">
         <p class="card-text">
           Click the button below to open a form and provide information for the
@@ -46,11 +57,11 @@
         <li class="list-group-item">Due Date</li>
         <li class="list-group-item">Hourly Rate</li>
       </ul>
-      <div class="card-footer">
+      <div class="card-footer text-center d-grid gap-2">
         <!-- Button to open the modal -->
         <button
           type="button"
-          class="btn btn-primary"
+          class="btn btn-primary bg-black bg-gradient text-white border-white"
           data-bs-toggle="modal"
           data-bs-target="#myModal"
         >

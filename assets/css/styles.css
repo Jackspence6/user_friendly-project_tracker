@@ -9,11 +9,41 @@
 /******************************************/
 /* Element Selectors */
 /******************************************/
+/* Styles for h1 element */
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+/* Styles for h2 element */
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+/* Styles for p element in header */
+header p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
 
 /******************************************/
 /* Class Selectors */
 /******************************************/
+.card-header {
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 700;
+}
 
+.card-text {
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 200;
+}
+
+.list-group-item {
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 700;
+}
 /******************************************/
 /* ID Selectors */
 /******************************************/
