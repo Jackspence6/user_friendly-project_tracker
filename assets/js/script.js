@@ -3,6 +3,13 @@
 /******************************************/
 var dateDisplayEl = $("#date-display");
 var datePickerEl = $("#datepicker");
+var projectNameEl = $("#project-name");
+var projectTypeEl = $("#project-type");
+var hourlyWageEl = $("#hourly-wage");
+var dueDateEl = $("#due-date");
+var daysUntilDueDateEl = $("#days-until-due-date");
+var estimatedTotalEarningsEl = $("#estimated-total-earnings");
+var deleteProjectEl = $("#delete-project");
 /******************************************/
 /* Global variables and constants */
 /******************************************/
@@ -28,7 +35,13 @@ $(function () {
 /******************************************/
 /* Document manipulation */
 /******************************************/
-
+var projectName = projectNameEl.val();
+var projectType = projectTypeEl.val();
+var hourlyWage = hourlyWageEl.val();
+var dueDate = dueDateEl.val();
+var daysUntilDueDate = daysUntilDueDateEl.val();
+var estimatedTotalEarnings = estimatedTotalEarningsEl.val();
+var deleteProject = deleteProjectEl.val();
 /******************************************/
 /* Initialization code */
 /******************************************/
