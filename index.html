@@ -42,31 +42,57 @@
       </div>
     </header>
 
-    <!-- Card with app instructions and button  -->
-    <div class="card" style="width: 18rem">
-      <div class="card-header bg-dark bg-gradient text-white">Instructions</div>
-      <div class="card-body">
-        <p class="card-text">
-          Click the button below to open a form and provide information for the
-          following:
-        </p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Project Name</li>
-        <li class="list-group-item">Project Type</li>
-        <li class="list-group-item">Due Date</li>
-        <li class="list-group-item">Hourly Rate</li>
-      </ul>
-      <div class="card-footer text-center d-grid gap-2">
-        <!-- Button to open the modal -->
-        <button
-          type="button"
-          class="btn btn-primary bg-black bg-gradient text-white border-white"
-          data-bs-toggle="modal"
-          data-bs-target="#myModal"
-        >
-          Add Project
-        </button>
+    <div class="container">
+      <div class="row">
+        <div class="col-2">
+          <!-- Card with app instructions and button  -->
+          <div class="card" style="width: 13rem">
+            <div class="card-header bg-dark bg-gradient text-white">
+              Instructions
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                Click the button below to open a form and provide information
+                for the following:
+              </p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Project Name</li>
+              <li class="list-group-item">Project Type</li>
+              <li class="list-group-item">Due Date</li>
+              <li class="list-group-item">Hourly Rate</li>
+            </ul>
+            <div class="card-footer text-center d-grid gap-2">
+              <!-- Button to open the modal -->
+              <button
+                type="button"
+                class="btn btn-primary bg-black bg-gradient text-white border-white"
+                data-bs-toggle="modal"
+                data-bs-target="#myModal"
+              >
+                Add Project
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-10">
+          <!-- Bootstrap Table for Project info storage -->
+          <table class="table table-bordered border-black">
+            <thead class="bg-success bg-gradient text-black">
+              <tr>
+                <th scope="col">Project name</th>
+                <th scope="col">Project type</th>
+                <th scope="col">Hourly wage</th>
+                <th scope="col">Due date</th>
+                <th scope="col">Days until the due date</th>
+                <th scope="col">Estimated total earnings</th>
+                <th scope="col">Delete Project</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider"></tbody>
+          </table>
+        </div>
       </div>
     </div>
 
