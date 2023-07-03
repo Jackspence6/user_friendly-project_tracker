@@ -3,7 +3,6 @@
 /******************************************/
 var dateDisplayEl = $("#date-display");
 var datePickerEl = $("#datepicker");
-var tableEl = $(".table");
 var projectNameEl = $("#project-name");
 var projectTypeEl = $("#project-type");
 var hourlyWageEl = $("#hourly-wage");
@@ -63,7 +62,13 @@ $("#submitBtn").on("click", function () {
 /******************************************/
 /* Document manipulation */
 /******************************************/
-
+var projectName = projectNameEl.val();
+var projectType = projectTypeEl.val();
+var hourlyWage = hourlyWageEl.val();
+var dueDate = dueDateEl.val();
+var daysUntilDueDate = daysUntilDueDateEl.val();
+var estimatedTotalEarnings = estimatedTotalEarningsEl.val();
+var deleteProject = deleteProjectEl.val();
 /******************************************/
 /* Initialization code */
 /******************************************/
