@@ -28,6 +28,7 @@ $(function () {
   $("#datepicker").datepicker({ minDate: -20 });
 });
 
+
 /******************************************/
 /* Event listeners */
 /******************************************/
@@ -35,13 +36,7 @@ $(function () {
 /******************************************/
 /* Document manipulation */
 /******************************************/
-var projectName = projectNameEl.val();
-var projectType = projectTypeEl.val();
-var hourlyWage = hourlyWageEl.val();
-var dueDate = dueDateEl.val();
-var daysUntilDueDate = daysUntilDueDateEl.val();
-var estimatedTotalEarnings = estimatedTotalEarningsEl.val();
-var deleteProject = deleteProjectEl.val();
+
 /******************************************/
 /* Initialization code */
 /******************************************/
