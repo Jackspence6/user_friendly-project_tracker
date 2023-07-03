@@ -78,20 +78,16 @@
 
         <div class="col-10">
           <!-- Bootstrap Table for Project info storage -->
-          <table class="table table-bordered border-black">
+          <table id="myTable" class="table table-bordered border-black">
             <thead class="bg-success bg-gradient text-black">
               <tr>
-                <th scope="col" id="project-name">Project name</th>
-                <th scope="col" id="project-type">Project type</th>
-                <th scope="col" id="hourly-wage">Hourly wage</th>
-                <th scope="col" id="due-date">Due date</th>
-                <th scope="col" id="days-until-due-date">
-                  Days until the due date
-                </th>
-                <th scope="col" id="estimated-total-earnings">
-                  Estimated total earnings
-                </th>
-                <th scope="col" id="delete-project">Delete Project</th>
+                <th scope="col">Project name</th>
+                <th scope="col">Project type</th>
+                <th scope="col">Hourly wage</th>
+                <th scope="col">Due date</th>
+                <th scope="col">Days until the due date</th>
+                <th scope="col">Estimated total earnings</th>
+                <th scope="col">Delete Project</th>
               </tr>
             </thead>
             <tbody class="table-group-divider"></tbody>
@@ -124,7 +120,7 @@
               <input
                 type="text"
                 class="form-control"
-                id="exampleFormControlInput1"
+                id="project-name"
                 placeholder="Mobile App Refactor"
               />
             </div>
@@ -136,7 +132,7 @@
                 >Type of Project:</label
               >
               <div class="input-group mb-3">
-                <select class="form-select" id="inputGroupSelect01">
+                <select class="form-select" id="project-type">
                   <option selected>Please Select One...</option>
                   <option value="1">Web Application (Front End)</option>
                   <option value="2">Web Application (Back End)</option>
@@ -156,6 +152,7 @@
                 <span class="input-group-text">$</span>
                 <input
                   type="text"
+                  id="hourly-wage"
                   class="form-control"
                   aria-label="Dollar amount (with dot and two decimal places)"
                 />
@@ -168,13 +165,14 @@
                 class="form-label fw-semibold"
                 >Due Date:</label
               >
-              <input type="text" id="datepicker" />
+              <input type="text" id="datepicker" class="due-date" />
             </div>
           </div>
           <!-- Modal Footer -->
           <div class="modal-footer">
             <button
               type="button"
+              id="submitBtn"
               class="btn btn-primary bg-black bg-gradient text-white border-white"
             >
               Submit Project Details

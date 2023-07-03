@@ -3,6 +3,7 @@
 /******************************************/
 var dateDisplayEl = $("#date-display");
 var datePickerEl = $("#datepicker");
+var tableEl = $(".table");
 var projectNameEl = $("#project-name");
 var projectTypeEl = $("#project-type");
 var hourlyWageEl = $("#hourly-wage");
@@ -28,10 +29,36 @@ $(function () {
   $("#datepicker").datepicker({ minDate: -20 });
 });
 
+// function to append project info to table
+function appendToTable(projectName, projectType, hourlyWage, dueDate) {
+  var newRow = $("<tr>")
+    .append($("<td>").text(projectName))
+    .append($("<td>").text(projectType))
+    .append($("<td>").text(hourlyWage))
+    .append($("<td>").text(dueDate));
+  $("#myTable tbody").append(newRow);
+}
 
 /******************************************/
 /* Event listeners */
 /******************************************/
+$("#submitBtn").on("click", function () {
+  var projectName = $("#project-name").val();
+  var projectType = $("#project-type").find(":selected").text();
+  var hourlyWage = $("#hourly-wage").val();
+  var dueDate = $("#datepicker").val();
+
+  appendToTable(projectName, projectType, hourlyWage, dueDate);
+
+  // Clear the input fields
+  $("#project-name").val("");
+  $("#project-type").val("");
+  $("#hourly-wage").val("");
+  $("#datepicker").val("");
+
+  // Close the modal
+  $("#myModal").modal("hide");
+});
 
 /******************************************/
 /* Document manipulation */
@@ -42,6 +69,7 @@ $(function () {
 /******************************************/
 // Update the date and time display every second
 setInterval(displayDate, 1000);
+
 /******************************************/
 /* Main logic */
 /******************************************/
