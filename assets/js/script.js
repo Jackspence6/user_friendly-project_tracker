@@ -14,7 +14,7 @@ var deleteProjectEl = $("#delete-project");
 /******************************************/
 /* Global variables and constants */
 /******************************************/
-
+var newRow;
 /******************************************/
 /* Function and class declarations */
 /******************************************/
@@ -38,7 +38,7 @@ function appendToTable(
   daysUntilDueDate,
   estimatedTotalEarnings
 ) {
-  var newRow = $("<tr>")
+  newRow = $("<tr>")
     .append($("<td>").text(projectName))
     .append($("<td>").text(projectType))
     .append($("<td>").text("$" + hourlyWage))
@@ -51,7 +51,7 @@ function appendToTable(
         .append(
           $("<button>")
             .addClass(
-              "btn btn-primary bg-black bg-gradient text-white border-white"
+              "btn btn-primary bg-black bg-gradient text-white border-white delete-btn"
             )
             .text("X")
         )
@@ -94,7 +94,13 @@ function calcTotalEarnings(hourlyWage, daysUntilDueDate) {
 /******************************************/
 /* Event listeners */
 /******************************************/
+// Event listener to handle form submission
 $("#submitBtn").on("click", handleSubmit);
+
+// Event listener to enable users to delete projects using the "X" Button
+$("#myTable tbody").on("click", ".delete-btn", function () {
+  $(this).closest("tr").remove();
+});
 
 /******************************************/
 /* Document manipulation */
