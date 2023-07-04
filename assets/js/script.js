@@ -45,7 +45,17 @@ function appendToTable(
     .append($("<td>").text(dueDate))
     .append($("<td>").text(daysUntilDueDate + " days"))
     .append($("<td>").text("$" + estimatedTotalEarnings))
-    .append($("<td>").text("X"));
+    .append(
+      $("<td>")
+        .addClass("d-grid")
+        .append(
+          $("<button>")
+            .addClass(
+              "btn btn-primary bg-black bg-gradient text-white border-white"
+            )
+            .text("X")
+        )
+    );
   $("#myTable tbody").append(newRow);
 }
 
