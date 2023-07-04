@@ -27,6 +27,10 @@ header p {
   font-weight: 300;
 }
 
+footer {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
+}
 /******************************************/
 /* Class Selectors */
 /******************************************/
