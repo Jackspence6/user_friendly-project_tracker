@@ -30,38 +30,61 @@ $(function () {
 });
 
 // function to append project info to table
-function appendToTable(projectName, projectType, hourlyWage, dueDate) {
+function appendToTable(
+  projectName,
+  projectType,
+  hourlyWage,
+  dueDate,
+  daysUntilDueDate,
+  estimatedTotalEarnings
+) {
   var newRow = $("<tr>")
     .append($("<td>").text(projectName))
     .append($("<td>").text(projectType))
     .append($("<td>").text("$" + hourlyWage))
-    .append($("<td>").text(dueDate));
+    .append($("<td>").text(dueDate))
+    .append($("<td>").text(daysUntilDueDate + " days"))
+    .append($("<td>").text("$" + estimatedTotalEarnings))
+    .append($("<td>").text("X"));
   $("#myTable tbody").append(newRow);
 }
 
 // Function to handle the form submit
 function handleSubmit() {
-   var projectName = $("#project-name").val();
-   var projectType = $("#project-type").find(":selected").text();
-   var hourlyWage = $("#hourly-wage").val();
-   var dueDate = $("#datepicker").val();
+  var projectName = $("#project-name").val();
+  var projectType = $("#project-type").find(":selected").text();
+  var hourlyWage = $("#hourly-wage").val();
+  var dueDate = $("#datepicker").val();
+  var daysUntilDueDate = moment(dueDate, "MM/DD/YYYY").diff(moment(), "days");
+  var estimatedTotalEarnings = calcTotalEarnings(hourlyWage, daysUntilDueDate);
 
-   appendToTable(projectName, projectType, hourlyWage, dueDate);
+  appendToTable(
+    projectName,
+    projectType,
+    hourlyWage,
+    dueDate,
+    daysUntilDueDate,
+    estimatedTotalEarnings
+  );
 
-   // Clear the input fields
-   $("#project-name").val("");
-   $("#project-type").val("");
-   $("#hourly-wage").val("");
-   $("#datepicker").val("");
+  // Clear the input fields
+  $("#project-name").val("");
+  $("#project-type").val("");
+  $("#hourly-wage").val("");
+  $("#datepicker").val("");
 
-   // Close the modal
-   $("#myModal").modal("hide");
+  // Close the modal
+  $("#myModal").modal("hide");
+}
+
+// function to calculate Total Earnings
+function calcTotalEarnings(hourlyWage, daysUntilDueDate) {
+  return hourlyWage * (daysUntilDueDate * 8);
 }
 /******************************************/
 /* Event listeners */
 /******************************************/
 $("#submitBtn").on("click", handleSubmit);
-  
 
 /******************************************/
 /* Document manipulation */
