@@ -34,31 +34,34 @@ function appendToTable(projectName, projectType, hourlyWage, dueDate) {
   var newRow = $("<tr>")
     .append($("<td>").text(projectName))
     .append($("<td>").text(projectType))
-    .append($("<td>").text(hourlyWage))
+    .append($("<td>").text("$" + hourlyWage))
     .append($("<td>").text(dueDate));
   $("#myTable tbody").append(newRow);
 }
 
+// Function to handle the form submit
+function handleSubmit() {
+   var projectName = $("#project-name").val();
+   var projectType = $("#project-type").find(":selected").text();
+   var hourlyWage = $("#hourly-wage").val();
+   var dueDate = $("#datepicker").val();
+
+   appendToTable(projectName, projectType, hourlyWage, dueDate);
+
+   // Clear the input fields
+   $("#project-name").val("");
+   $("#project-type").val("");
+   $("#hourly-wage").val("");
+   $("#datepicker").val("");
+
+   // Close the modal
+   $("#myModal").modal("hide");
+}
 /******************************************/
 /* Event listeners */
 /******************************************/
-$("#submitBtn").on("click", function () {
-  var projectName = $("#project-name").val();
-  var projectType = $("#project-type").find(":selected").text();
-  var hourlyWage = $("#hourly-wage").val();
-  var dueDate = $("#datepicker").val();
-
-  appendToTable(projectName, projectType, hourlyWage, dueDate);
-
-  // Clear the input fields
-  $("#project-name").val("");
-  $("#project-type").val("");
-  $("#hourly-wage").val("");
-  $("#datepicker").val("");
-
-  // Close the modal
-  $("#myModal").modal("hide");
-});
+$("#submitBtn").on("click", handleSubmit);
+  
 
 /******************************************/
 /* Document manipulation */
